@@ -1,0 +1,12 @@
+Installation - MacOS M1 Pro, 64GB Memory
+- remove pytorch-cuda - no NVIDIA GPU
+- remove torchtriton (JIT for CUDA, Mac MPS does not use it) - no NVIDIA GPU
+- remove cuda-* - no NVIDIA GPU
+- replace +pt21cu121 with plain versions
+- replace ffmpeg - use Homebrew on Mac - brew install ffmpeg
+- replace dssp - use Homebrew on Mac - brew install dssp - check if used in inference_model.py
+
+- python 3.10.11
+- pytorch 2.2.2
+- pytorch-lightening
+
