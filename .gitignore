@@ -8,6 +8,8 @@ __pycache__/
 
 # Mac
 .DS_Store
+topoqa_results/
+topoqa_work/
 
 # Distribution / packaging
 .Python

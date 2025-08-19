@@ -28,3 +28,6 @@ pip install -r requirements_macos_mps.txt
 # install mkdssp
 brew tap brewsci/bio || true
 brew install dssp
+
+# test mkdssp
+which mkdssp && mkdssp --version

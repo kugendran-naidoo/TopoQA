@@ -66,7 +66,10 @@ class node_fea:
 
         structure = p.get_structure(self.model_name, pdb_file)
         model = structure[0]
-        dssp = DSSP(model, pdb_file)
+
+        # K - tell Biopython its PDB file
+        dssp = DSSP(model, pdb_file, file_type="P")
+
         key_list = list(dssp.keys())
         
         three_letter_list=[]
