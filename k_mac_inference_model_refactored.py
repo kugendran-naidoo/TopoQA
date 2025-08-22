@@ -42,6 +42,21 @@ from src.node_fea_df import node_fea
 from src.graph import create_graph
 from src.proteingat import GNN_edge1_edgepooling
 
+import warnings  # NEW
+
+# Silence Biopython DSSP noise when files are clearly PDB (we already pass file_type="PDB")
+warnings.filterwarnings(
+    "ignore",
+    message=".*does not seem to be an mmCIF file",
+    category=UserWarning,
+    module="Bio.PDB.DSSP",
+)
+
+# Encourage loky to recycle workers to avoid rare memory/bad-state accumulation
+os.environ.setdefault("LOKY_MAX_TASKS_PER_CHILD", "1")
+
+
+
 
 # ----------------------------- Utilities ----------------------------- #
 
@@ -97,17 +112,40 @@ def run_interface_extraction(complex_dir: Path, interface_dir: Path, jobs: int) 
     """Compute interfaces for all complexes in complex_dir into interface_dir."""
     interface_batch(str(complex_dir), str(interface_dir), int(jobs))
 
-
 def run_topology_features(model_names: Sequence[str], complex_dir: Path, topo_dir: Path,
                           interface_dir: Path, jobs: int) -> None:
-    """Compute topological features in parallel."""
-    def _topo_one(name: str) -> None:
+    """Compute persistent-homology (topo) features in parallel and write node_topo/<name>.csv."""
+    topo_dir.mkdir(parents=True, exist_ok=True)
+
+    # same element sets as in File I
+    E_SET = [['C'], ['N'], ['O'], ['C','N'], ['C','O'], ['N','O'], ['C','N','O']]
+    NEI_DIS = 8  # keep identical to File I's default
+
+    def _one(name: str) -> None:
         try:
-            topo_fea(name, str(complex_dir), str(interface_dir), str(topo_dir))
+            pdb_path = _resolve_structure_path(name, complex_dir)
+            if pdb_path is None:
+                print(f"[topo_fea] skip {name}: no PDB/mmCIF in {complex_dir}")
+                return
+
+            vfile = interface_dir / f"{name}.txt"
+            if not (vfile.exists() and vfile.stat().st_size > 0):
+                print(f"[topo_fea] skip {name}: no interface file {vfile}")
+                return
+
+            vert_df = pd.read_csv(vfile, sep=' ', names=['ID','co_1','co_2','co_3'])
+            res_list = list(vert_df['ID'])
+
+            obj = topo_fea(str(pdb_path), NEI_DIS, E_SET, res_list, Cut=NEI_DIS)
+            df = obj.cal_fea()
+            (topo_dir / f"{name}.csv").write_text(df.to_csv(index=False))
         except Exception as e:
             print(f"[topo_fea] error in {name}: {e}")
 
-    Parallel(n_jobs=jobs, backend="loky")(delayed(_topo_one)(m) for m in model_names)
+    Parallel(n_jobs=jobs, backend="loky", batch_size=1, prefer="processes", verbose=0)(
+    delayed(_one)(m) for m in model_names
+    )
+
 
 def _resolve_structure_path(name: str, complex_dir: Path) -> Optional[Path]:
     for ext in (".pdb", ".cif", ".mmcif"):
@@ -156,7 +194,9 @@ def run_node_features(model_names: Sequence[str], complex_dir: Path, topo_dir: P
         except Exception as e:
             print(f"[node_fea] error in {name}: {e}")
 
-    Parallel(n_jobs=jobs, backend="loky")(delayed(_node_one)(m) for m in model_names)
+    Parallel(n_jobs=jobs, backend="loky", batch_size=1, prefer="processes", verbose=0)(
+    delayed(_node_one)(m) for m in model_names
+    )
 
 def run_graph_construction(model_names: Sequence[str], fea_dir: Path, interface_dir: Path,
                            arr_cutoff: Sequence[str], graph_dir: Path,
@@ -228,7 +268,9 @@ def run_graph_construction(model_names: Sequence[str], fea_dir: Path, interface_
         except Exception as e:
             print(f"[create_graph] error in {name}: {e}")
 
-    Parallel(n_jobs=jobs, backend="loky")(delayed(_graph_one)(m) for m in model_names)
+    Parallel(n_jobs=jobs, backend="loky", batch_size=1, prefer="processes", verbose=0)(
+    delayed(_graph_one)(m) for m in model_names
+    )
 
 # ------------------------ Dataset / Inference ------------------------ #
 

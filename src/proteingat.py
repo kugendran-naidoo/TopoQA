@@ -4,8 +4,9 @@ from torch_geometric.nn import global_add_pool, global_mean_pool, global_max_poo
 import torch.nn as nn
 import pytorch_lightning as pl
 from .gat_with_edge import GATv2ConvWithEdgeEmbedding1
+# import warnings
 
-
+# warnings.filterwarnings("ignore", message=".*jittable.*deprecated.*")
 
 class GNN_edge1_edgepooling(pl.LightningModule):
     def __init__(self,pooling_type,num_net=5,hidden_dim=32,edge_dim=1,output_dim=64,n_output=1,heads=8):
@@ -26,11 +27,11 @@ class GNN_edge1_edgepooling(pl.LightningModule):
 
         self.edge_embed=nn.ModuleList([torch.nn.Linear(edge_dim,hidden_dim) for _ in range(self.num_net)])
         self.embed=nn.ModuleList([torch.nn.Linear(num_feature_xd,hidden_dim) for _ in range(self.num_net)])
-        self.conv1=nn.ModuleList([GATv2ConvWithEdgeEmbedding1(hidden_dim, out_channels=hidden_dim, heads=self.heads, edge_dim=hidden_dim, add_self_loops=False, dropout=0.25,concat=False).jittable() \
+        self.conv1=nn.ModuleList([GATv2ConvWithEdgeEmbedding1(hidden_dim, out_channels=hidden_dim, heads=self.heads, edge_dim=hidden_dim, add_self_loops=False, dropout=0.25,concat=False) \
                                   for _ in range(self.num_net)])
-        self.conv2=nn.ModuleList([GATv2ConvWithEdgeEmbedding1(hidden_dim, out_channels=hidden_dim, heads=self.heads, edge_dim=hidden_dim, add_self_loops=False, dropout=0.25,concat=False).jittable() \
+        self.conv2=nn.ModuleList([GATv2ConvWithEdgeEmbedding1(hidden_dim, out_channels=hidden_dim, heads=self.heads, edge_dim=hidden_dim, add_self_loops=False, dropout=0.25,concat=False) \
                                   for _ in range(self.num_net)])       
-        self.conv3=nn.ModuleList([GATv2ConvWithEdgeEmbedding1(hidden_dim, out_channels=hidden_dim, heads=self.heads, edge_dim=hidden_dim, add_self_loops=False, dropout=0.25,concat=False).jittable() \
+        self.conv3=nn.ModuleList([GATv2ConvWithEdgeEmbedding1(hidden_dim, out_channels=hidden_dim, heads=self.heads, edge_dim=hidden_dim, add_self_loops=False, dropout=0.25,concat=False) \
                                   for _ in range(self.num_net)])
         
         self.fc_edge = nn.Linear(hidden_dim,hidden_dim//2)

@@ -4,6 +4,13 @@ import pandas as pd
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 import os
+import warnings
+warnings.filterwarnings(
+    "ignore",
+    message=".*does not seem to be an mmCIF file",
+    module="Bio.PDB.DSSP"
+)
+
 
 
 class node_fea:
@@ -67,8 +74,13 @@ class node_fea:
         structure = p.get_structure(self.model_name, pdb_file)
         model = structure[0]
 
-        # K - tell Biopython its PDB file
-        dssp = DSSP(model, pdb_file, file_type="P")
+        # AFTER (robust across versions)
+        try:
+            dssp = DSSP(model, pdb_file, file_type="PDB")
+
+        except TypeError:
+            # Older/newer biopython variants can infer from filename if file_type omitted
+            dssp = DSSP(model, pdb_file)
 
         key_list = list(dssp.keys())
         
