@@ -5,8 +5,9 @@
 #     in the structure:
 #     target, model, pred_dockq, true_dockq
 
-export GROUND_TRUTH_FILE="/Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/data/DProQ_benchmark/BM55-AF2/label_info.csv"
-export TOPO_RESULTS_DIR="/Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results"
+export DATASET_NAME="BM55-AF2"
+export GROUND_TRUTH_FILE="/Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/BM55-AF2/label_info.csv"
+export TOPO_RESULTS_DIR="/Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/BM55-AF2"
 export TOPO_RESULT_FILE="result.csv"
 
 # search topo_results directory for target results
