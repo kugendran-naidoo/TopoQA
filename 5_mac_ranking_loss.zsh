@@ -13,7 +13,8 @@ export TOPO_RESULT_FILE="result.csv"
 search_topo_results() {
 
    find ${TOPO_RESULTS_DIR} |
-        grep ${TOPO_RESULT_FILE}
+   sort |    
+   grep "/${TOPO_RESULT_FILE}"
 
 }
 
@@ -25,6 +26,8 @@ search_topo_results() {
 # file 2: ground truth - file from BM55-AF2 dataset
  # sample structure file 2: <target>,<model_name>,<True DockQ>,<CAPRI>
  # sample structure file 2: 3SE8,model_1_multimer_20220423_555805,0.720,2
+# performs join between predicted and ground truth files
+# more reliable than unix join
 join_results_g_truth() {
 
 awk -F, 'FNR==NR {
@@ -45,11 +48,15 @@ if (!(k in a)) a[k] = $3
 
 # Main
 
+# list all available prediction result files - TOPO_RESULT_FILE
 search_topo_results |
+
+# process each result per target
 while read -r target_result_file
 do
 
    # result file name
+   # not used
    file_name="${target_result_file##*/}" 
 
    # full path excluding file name
@@ -72,50 +79,62 @@ do
                   sort
                  )
 
-   printf "\nResult File: ${target_result_file}\n"
-   printf "Target: ${target_name}\n"
+   printf "\nTarget: ${target_name}\n"
+   printf "Result File: ${target_result_file}\n"
    
-   printf "Generating Evaluation Results ...\n"
-   printf "Eval Results Dir: ${target_path}\n"
-   printf "Eval Results File: ${target_name}.unified_results.csv\n"
+   printf "Result Dir: ${target_path}\n"
+   printf "Evaluation Result File: ${target_name}.unified_results.csv\n"
+   printf "Evaluation Ranking Loss File (Audit): ${target_name}.ranking_loss_result.csv\n"
 
    # relate predicted results to ground truth
    # generate evaluation results used for computing ranking loss
    { printf "TARGET, MODEL, PRED_DOCKQ, TRUE_DOCKQ\n"
      join_results_g_truth "${temp_result}" "${temp_g_truth}" 
-   } > ${target_path}/${target_name}.unified_results.csv
+   } > ${target_path}/${target_name}.unified_result.csv
 
    # calculate m* (best true DockQ)
-   # from ${target_path}/${target_name}.unified_results.csv above
-   m_star=$(LC_ALL=C sort -t, -k4,4nr ${target_path}/${target_name}.unified_results.csv | 
+   # from ${target_path}/${target_name}.unified_result.csv above
+   m_star=$(LC_ALL=C sort -t, -k4,4nr ${target_path}/${target_name}.unified_result.csv | 
             head -1 |
             cut -d "," -f 4
            )
 
    # calculate m^ (best predicted DockQ)
-   # from ${target_path}/${target_name}.unified_results.csv above
-   m_hat=$(LC_ALL=C sort -t, -k3,3nr ${target_path}/${target_name}.unified_results.csv | 
+   # from ${target_path}/${target_name}.unified_result.csv above
+   m_hat=$(LC_ALL=C sort -t, -k3,3nr ${target_path}/${target_name}.unified_result.csv | 
            head -1 |
            cut -d "," -f 4
           )
 
+   printf "ranking loss = m* - m^\n"
    printf "${target_name} m* = ${m_star}\n"
    printf "${target_name} m^ = ${m_hat}\n"
 
-   ranking_loss=$(awk -v a="$m_star" -v b="$m_hat" 'BEGIN{print a-b}')
-   printf "ranking loss = m* - m^\n"
+   # calculate ranking loss
+   ranking_loss=$(awk -v a="$m_star" -v b="$m_hat" 'BEGIN{print a-b}' | sed "s/,/\./")
+
    printf "${target_name} ranking loss = ${ranking_loss}\n\n"
 
    # write ranking loss audit file - to debug if required
-   printf "${target_name} ranking loss = ${ranking_loss}\n\n" > ${target_path}/${target_name}.ranking_loss_result.csv
-   m_star_row=$(LC_ALL=C sort -t, -k4,4nr ${target_path}/${target_name}.unified_results.csv | 
+   # Begin 
+   printf "ranking loss = m* - m^\n" \
+   > ${target_path}/${target_name}.ranking_loss_result.csv
+
+   printf "${target_name} m* = ${m_star}\n${target_name} m^ = ${m_hat}\n" \
+   >> ${target_path}/${target_name}.ranking_loss_result.csv
+
+   printf "${target_name} ranking loss = ${ranking_loss}\n\n" \
+   >> ${target_path}/${target_name}.ranking_loss_result.csv
+
+   m_star_row=$(LC_ALL=C sort -t, -k4,4nr ${target_path}/${target_name}.unified_result.csv | 
                 head -1
                )
    printf "${m_star_row}\n" >> ${target_path}/${target_name}.ranking_loss_result.csv
 
-   m_hat_row=$(LC_ALL=C sort -t, -k3,3nr ${target_path}/${target_name}.unified_results.csv | 
+   m_hat_row=$(LC_ALL=C sort -t, -k3,3nr ${target_path}/${target_name}.unified_result.csv | 
                head -1
               )
    printf "${m_hat_row}\n" >> ${target_path}/${target_name}.ranking_loss_result.csv
+   # End 
 
 done
