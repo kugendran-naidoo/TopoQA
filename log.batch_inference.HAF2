@@ -1,0 +1,594 @@
+
+Dataset Name: HAF2
+
+Inference Target: 7ALA
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7ALA/pdb \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7ALA \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/HAF2/7ALA \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[info] found 100 models in /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7ALA/pdb
+[stage] extracting interfaces -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7ALA/interface_ca (jobs=8)
+[debug] interface files found: 100
+[info] 100 models with interfaces.
+[stage] computing topology features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7ALA/node_topo (jobs=8)
+[stage] computing node features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7ALA/node_fea (jobs=8)
+[stage] constructing graphs -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7ALA/graph (jobs=8, cutoff=0-10 Å)
+[stage] graphs available for dataset: 100
+[stage] loading checkpoint: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/model/topoqa.ckpt
+[stage] running inference on 100 graphs (batch_size=4)
+[debug] infer(): batches=25, device=cpu, first_batch_nodes=275, has_batch=True
+[debug] first_batch edge_index shape: (2, 1716)
+[done] wrote 100 predictions to /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/HAF2/7ALA/result.csv
+Elapsed: 63 s
+
+Inference Target: pdb
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7ALA/pdb/pdb \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/pdb \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/HAF2/pdb \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[error] complex-folder does not exist: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7ALA/pdb/pdb
+Elapsed: 2 s
+
+Inference Target: 7AMV
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7AMV/pdb \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7AMV \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/HAF2/7AMV \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[info] found 70 models in /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7AMV/pdb
+[stage] extracting interfaces -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7AMV/interface_ca (jobs=8)
+[debug] interface files found: 70
+[info] 70 models with interfaces.
+[stage] computing topology features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7AMV/node_topo (jobs=8)
+[stage] computing node features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7AMV/node_fea (jobs=8)
+[stage] constructing graphs -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7AMV/graph (jobs=8, cutoff=0-10 Å)
+[stage] graphs available for dataset: 70
+[stage] loading checkpoint: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/model/topoqa.ckpt
+[stage] running inference on 70 graphs (batch_size=4)
+[debug] infer(): batches=18, device=cpu, first_batch_nodes=706, has_batch=True
+[debug] first_batch edge_index shape: (2, 3008)
+[done] wrote 70 predictions to /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/HAF2/7AMV/result.csv
+Elapsed: 116 s
+
+Inference Target: pdb
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7AMV/pdb/pdb \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/pdb \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/HAF2/pdb \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[error] complex-folder does not exist: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7AMV/pdb/pdb
+Elapsed: 2 s
+
+Inference Target: 7AOH
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7AOH/pdb \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7AOH \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/HAF2/7AOH \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[info] found 90 models in /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7AOH/pdb
+[stage] extracting interfaces -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7AOH/interface_ca (jobs=8)
+[debug] interface files found: 90
+[info] 90 models with interfaces.
+[stage] computing topology features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7AOH/node_topo (jobs=8)
+[stage] computing node features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7AOH/node_fea (jobs=8)
+[stage] constructing graphs -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7AOH/graph (jobs=8, cutoff=0-10 Å)
+[stage] graphs available for dataset: 90
+[stage] loading checkpoint: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/model/topoqa.ckpt
+[stage] running inference on 90 graphs (batch_size=4)
+[debug] infer(): batches=23, device=cpu, first_batch_nodes=387, has_batch=True
+[debug] first_batch edge_index shape: (2, 1302)
+[done] wrote 90 predictions to /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/HAF2/7AOH/result.csv
+Elapsed: 126 s
+
+Inference Target: pdb
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7AOH/pdb/pdb \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/pdb \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/HAF2/pdb \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[error] complex-folder does not exist: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7AOH/pdb/pdb
+Elapsed: 2 s
+
+Inference Target: 7D3Y
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7D3Y/pdb \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7D3Y \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/HAF2/7D3Y \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[info] found 105 models in /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7D3Y/pdb
+[stage] extracting interfaces -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7D3Y/interface_ca (jobs=8)
+[debug] interface files found: 105
+[info] 105 models with interfaces.
+[stage] computing topology features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7D3Y/node_topo (jobs=8)
+[stage] computing node features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7D3Y/node_fea (jobs=8)
+[stage] constructing graphs -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7D3Y/graph (jobs=8, cutoff=0-10 Å)
+[stage] graphs available for dataset: 105
+[stage] loading checkpoint: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/model/topoqa.ckpt
+[stage] running inference on 105 graphs (batch_size=4)
+[debug] infer(): batches=27, device=cpu, first_batch_nodes=369, has_batch=True
+[debug] first_batch edge_index shape: (2, 1466)
+[done] wrote 105 predictions to /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/HAF2/7D3Y/result.csv
+Elapsed: 82 s
+
+Inference Target: pdb
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7D3Y/pdb/pdb \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/pdb \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/HAF2/pdb \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[error] complex-folder does not exist: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7D3Y/pdb/pdb
+Elapsed: 2 s
+
+Inference Target: 7D7F
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7D7F/pdb \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7D7F \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/HAF2/7D7F \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[info] found 115 models in /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7D7F/pdb
+[stage] extracting interfaces -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7D7F/interface_ca (jobs=8)
+[debug] interface files found: 115
+[info] 115 models with interfaces.
+[stage] computing topology features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7D7F/node_topo (jobs=8)
+[stage] computing node features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7D7F/node_fea (jobs=8)
+[stage] constructing graphs -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7D7F/graph (jobs=8, cutoff=0-10 Å)
+[stage] graphs available for dataset: 115
+[stage] loading checkpoint: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/model/topoqa.ckpt
+[stage] running inference on 115 graphs (batch_size=4)
+[debug] infer(): batches=29, device=cpu, first_batch_nodes=837, has_batch=True
+[debug] first_batch edge_index shape: (2, 3390)
+[done] wrote 115 predictions to /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/HAF2/7D7F/result.csv
+Elapsed: 152 s
+
+Inference Target: pdb
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7D7F/pdb/pdb \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/pdb \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/HAF2/pdb \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[error] complex-folder does not exist: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7D7F/pdb/pdb
+Elapsed: 2 s
+
+Inference Target: 7KBR
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7KBR/pdb \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7KBR \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/HAF2/7KBR \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[info] found 115 models in /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7KBR/pdb
+[stage] extracting interfaces -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7KBR/interface_ca (jobs=8)
+[debug] interface files found: 115
+[info] 115 models with interfaces.
+[stage] computing topology features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7KBR/node_topo (jobs=8)
+[stage] computing node features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7KBR/node_fea (jobs=8)
+[stage] constructing graphs -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7KBR/graph (jobs=8, cutoff=0-10 Å)
+[stage] graphs available for dataset: 115
+[stage] loading checkpoint: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/model/topoqa.ckpt
+[stage] running inference on 115 graphs (batch_size=4)
+[debug] infer(): batches=29, device=cpu, first_batch_nodes=794, has_batch=True
+[debug] first_batch edge_index shape: (2, 4666)
+[done] wrote 115 predictions to /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/HAF2/7KBR/result.csv
+Elapsed: 136 s
+
+Inference Target: pdb
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7KBR/pdb/pdb \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/pdb \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/HAF2/pdb \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[error] complex-folder does not exist: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7KBR/pdb/pdb
+Elapsed: 2 s
+
+Inference Target: 7LXT
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7LXT/pdb \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7LXT \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/HAF2/7LXT \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[info] found 115 models in /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7LXT/pdb
+[stage] extracting interfaces -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7LXT/interface_ca (jobs=8)
+[debug] interface files found: 115
+[info] 115 models with interfaces.
+[stage] computing topology features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7LXT/node_topo (jobs=8)
+[stage] computing node features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7LXT/node_fea (jobs=8)
+[stage] constructing graphs -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7LXT/graph (jobs=8, cutoff=0-10 Å)
+[stage] graphs available for dataset: 115
+[stage] loading checkpoint: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/model/topoqa.ckpt
+[stage] running inference on 115 graphs (batch_size=4)
+[debug] infer(): batches=29, device=cpu, first_batch_nodes=395, has_batch=True
+[debug] first_batch edge_index shape: (2, 1596)
+[done] wrote 115 predictions to /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/HAF2/7LXT/result.csv
+Elapsed: 88 s
+
+Inference Target: pdb
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7LXT/pdb/pdb \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/pdb \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/HAF2/pdb \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[error] complex-folder does not exist: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7LXT/pdb/pdb
+Elapsed: 2 s
+
+Inference Target: 7MRW
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7MRW/pdb \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7MRW \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/HAF2/7MRW \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[info] found 90 models in /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7MRW/pdb
+[stage] extracting interfaces -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7MRW/interface_ca (jobs=8)
+[debug] interface files found: 90
+[info] 90 models with interfaces.
+[stage] computing topology features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7MRW/node_topo (jobs=8)
+[stage] computing node features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7MRW/node_fea (jobs=8)
+[stage] constructing graphs -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7MRW/graph (jobs=8, cutoff=0-10 Å)
+[stage] graphs available for dataset: 90
+[stage] loading checkpoint: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/model/topoqa.ckpt
+[stage] running inference on 90 graphs (batch_size=4)
+[debug] infer(): batches=23, device=cpu, first_batch_nodes=2712, has_batch=True
+[debug] first_batch edge_index shape: (2, 35694)
+[done] wrote 90 predictions to /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/HAF2/7MRW/result.csv
+Elapsed: 376 s
+
+Inference Target: pdb
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7MRW/pdb/pdb \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/pdb \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/HAF2/pdb \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[error] complex-folder does not exist: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7MRW/pdb/pdb
+Elapsed: 2 s
+
+Inference Target: 7NKZ
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7NKZ/pdb \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7NKZ \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/HAF2/7NKZ \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[info] found 115 models in /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7NKZ/pdb
+[stage] extracting interfaces -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7NKZ/interface_ca (jobs=8)
+[debug] interface files found: 115
+[info] 115 models with interfaces.
+[stage] computing topology features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7NKZ/node_topo (jobs=8)
+[stage] computing node features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7NKZ/node_fea (jobs=8)
+[stage] constructing graphs -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7NKZ/graph (jobs=8, cutoff=0-10 Å)
+[stage] graphs available for dataset: 115
+[stage] loading checkpoint: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/model/topoqa.ckpt
+[stage] running inference on 115 graphs (batch_size=4)
+[debug] infer(): batches=29, device=cpu, first_batch_nodes=689, has_batch=True
+[debug] first_batch edge_index shape: (2, 3652)
+[done] wrote 115 predictions to /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/HAF2/7NKZ/result.csv
+Elapsed: 130 s
+
+Inference Target: pdb
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7NKZ/pdb/pdb \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/pdb \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/HAF2/pdb \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[error] complex-folder does not exist: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7NKZ/pdb/pdb
+Elapsed: 2 s
+
+Inference Target: 7O27
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7O27/pdb \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7O27 \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/HAF2/7O27 \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[info] found 115 models in /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7O27/pdb
+[stage] extracting interfaces -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7O27/interface_ca (jobs=8)
+[debug] interface files found: 115
+[info] 115 models with interfaces.
+[stage] computing topology features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7O27/node_topo (jobs=8)
+[stage] computing node features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7O27/node_fea (jobs=8)
+[stage] constructing graphs -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7O27/graph (jobs=8, cutoff=0-10 Å)
+[stage] graphs available for dataset: 115
+[stage] loading checkpoint: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/model/topoqa.ckpt
+[stage] running inference on 115 graphs (batch_size=4)
+[debug] infer(): batches=29, device=cpu, first_batch_nodes=371, has_batch=True
+[debug] first_batch edge_index shape: (2, 1950)
+[done] wrote 115 predictions to /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/HAF2/7O27/result.csv
+Elapsed: 87 s
+
+Inference Target: pdb
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7O27/pdb/pdb \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/pdb \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/HAF2/pdb \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[error] complex-folder does not exist: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7O27/pdb/pdb
+Elapsed: 2 s
+
+Inference Target: 7O28
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7O28/pdb \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7O28 \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/HAF2/7O28 \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[info] found 115 models in /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7O28/pdb
+[stage] extracting interfaces -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7O28/interface_ca (jobs=8)
+[debug] interface files found: 115
+[info] 115 models with interfaces.
+[stage] computing topology features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7O28/node_topo (jobs=8)
+[stage] computing node features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7O28/node_fea (jobs=8)
+[stage] constructing graphs -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7O28/graph (jobs=8, cutoff=0-10 Å)
+[stage] graphs available for dataset: 115
+[stage] loading checkpoint: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/model/topoqa.ckpt
+[stage] running inference on 115 graphs (batch_size=4)
+[debug] infer(): batches=29, device=cpu, first_batch_nodes=431, has_batch=True
+[debug] first_batch edge_index shape: (2, 2070)
+[done] wrote 115 predictions to /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/HAF2/7O28/result.csv
+Elapsed: 88 s
+
+Inference Target: pdb
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7O28/pdb/pdb \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/pdb \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/HAF2/pdb \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[error] complex-folder does not exist: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7O28/pdb/pdb
+Elapsed: 2 s
+
+Inference Target: 7OEL
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7OEL/pdb \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7OEL \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/HAF2/7OEL \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[info] found 115 models in /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/decoy/7OEL/pdb
+[stage] extracting interfaces -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/HAF2/7OEL/interface_ca (jobs=8)

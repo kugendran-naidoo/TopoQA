@@ -1,0 +1,482 @@
+
+Dataset Name: BM55-AF2
+
+Inference Target: 3SE8
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/BM55-AF2/decoy/3SE8 \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/3SE8 \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/BM55-AF2/3SE8 \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[info] found 30 models in /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/BM55-AF2/decoy/3SE8
+[stage] extracting interfaces -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/3SE8/interface_ca (jobs=8)
+[debug] interface files found: 30
+[info] 30 models with interfaces.
+[stage] computing topology features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/3SE8/node_topo (jobs=8)
+[stage] computing node features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/3SE8/node_fea (jobs=8)
+[stage] constructing graphs -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/3SE8/graph (jobs=8, cutoff=0-10 Å)
+[stage] graphs available for dataset: 30
+[stage] loading checkpoint: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/model/topoqa.ckpt
+[stage] running inference on 30 graphs (batch_size=4)
+[debug] infer(): batches=8, device=cpu, first_batch_nodes=859, has_batch=True
+[debug] first_batch edge_index shape: (2, 3886)
+[done] wrote 30 predictions to /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/BM55-AF2/3SE8/result.csv
+Elapsed: 51 s
+
+Inference Target: 3U7Y
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/BM55-AF2/decoy/3U7Y \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/3U7Y \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/BM55-AF2/3U7Y \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[info] found 30 models in /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/BM55-AF2/decoy/3U7Y
+[stage] extracting interfaces -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/3U7Y/interface_ca (jobs=8)
+[debug] interface files found: 30
+[info] 30 models with interfaces.
+[stage] computing topology features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/3U7Y/node_topo (jobs=8)
+[stage] computing node features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/3U7Y/node_fea (jobs=8)
+[stage] constructing graphs -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/3U7Y/graph (jobs=8, cutoff=0-10 Å)
+[stage] graphs available for dataset: 30
+[stage] loading checkpoint: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/model/topoqa.ckpt
+[stage] running inference on 30 graphs (batch_size=4)
+[debug] infer(): batches=8, device=cpu, first_batch_nodes=1011, has_batch=True
+[debug] first_batch edge_index shape: (2, 5254)
+[done] wrote 30 predictions to /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/BM55-AF2/3U7Y/result.csv
+Elapsed: 57 s
+
+Inference Target: 3WD5
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/BM55-AF2/decoy/3WD5 \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/3WD5 \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/BM55-AF2/3WD5 \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[info] found 30 models in /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/BM55-AF2/decoy/3WD5
+[stage] extracting interfaces -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/3WD5/interface_ca (jobs=8)
+[debug] interface files found: 30
+[info] 30 models with interfaces.
+[stage] computing topology features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/3WD5/node_topo (jobs=8)
+[stage] computing node features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/3WD5/node_fea (jobs=8)
+[stage] constructing graphs -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/3WD5/graph (jobs=8, cutoff=0-10 Å)
+[stage] graphs available for dataset: 30
+[stage] loading checkpoint: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/model/topoqa.ckpt
+[stage] running inference on 30 graphs (batch_size=4)
+[debug] infer(): batches=8, device=cpu, first_batch_nodes=1791, has_batch=True
+[debug] first_batch edge_index shape: (2, 10732)
+[done] wrote 30 predictions to /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/BM55-AF2/3WD5/result.csv
+Elapsed: 89 s
+
+Inference Target: 4ETQ
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/BM55-AF2/decoy/4ETQ \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/4ETQ \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/BM55-AF2/4ETQ \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[info] found 30 models in /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/BM55-AF2/decoy/4ETQ
+[stage] extracting interfaces -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/4ETQ/interface_ca (jobs=8)
+[debug] interface files found: 30
+[info] 30 models with interfaces.
+[stage] computing topology features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/4ETQ/node_topo (jobs=8)
+[stage] computing node features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/4ETQ/node_fea (jobs=8)
+[stage] constructing graphs -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/4ETQ/graph (jobs=8, cutoff=0-10 Å)
+[stage] graphs available for dataset: 30
+[stage] loading checkpoint: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/model/topoqa.ckpt
+[stage] running inference on 30 graphs (batch_size=4)
+[debug] infer(): batches=8, device=cpu, first_batch_nodes=744, has_batch=True
+[debug] first_batch edge_index shape: (2, 3024)
+[done] wrote 30 predictions to /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/BM55-AF2/4ETQ/result.csv
+Elapsed: 49 s
+
+Inference Target: 4M5Z
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/BM55-AF2/decoy/4M5Z \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/4M5Z \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/BM55-AF2/4M5Z \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[info] found 30 models in /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/BM55-AF2/decoy/4M5Z
+[stage] extracting interfaces -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/4M5Z/interface_ca (jobs=8)
+[debug] interface files found: 30
+[info] 30 models with interfaces.
+[stage] computing topology features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/4M5Z/node_topo (jobs=8)
+[stage] computing node features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/4M5Z/node_fea (jobs=8)
+[stage] constructing graphs -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/4M5Z/graph (jobs=8, cutoff=0-10 Å)
+[stage] graphs available for dataset: 30
+[stage] loading checkpoint: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/model/topoqa.ckpt
+[stage] running inference on 30 graphs (batch_size=4)
+[debug] infer(): batches=8, device=cpu, first_batch_nodes=774, has_batch=True
+[debug] first_batch edge_index shape: (2, 3398)
+[done] wrote 30 predictions to /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/BM55-AF2/4M5Z/result.csv
+Elapsed: 48 s
+
+Inference Target: 5CBA
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/BM55-AF2/decoy/5CBA \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/5CBA \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/BM55-AF2/5CBA \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[info] found 30 models in /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/BM55-AF2/decoy/5CBA
+[stage] extracting interfaces -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/5CBA/interface_ca (jobs=8)
+[debug] interface files found: 30
+[info] 30 models with interfaces.
+[stage] computing topology features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/5CBA/node_topo (jobs=8)
+[stage] computing node features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/5CBA/node_fea (jobs=8)
+[stage] constructing graphs -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/5CBA/graph (jobs=8, cutoff=0-10 Å)
+[stage] graphs available for dataset: 30
+[stage] loading checkpoint: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/model/topoqa.ckpt
+[stage] running inference on 30 graphs (batch_size=4)
+[debug] infer(): batches=8, device=cpu, first_batch_nodes=461, has_batch=True
+[debug] first_batch edge_index shape: (2, 1890)
+[done] wrote 30 predictions to /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/BM55-AF2/5CBA/result.csv
+Elapsed: 35 s
+
+Inference Target: 5GRJ
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/BM55-AF2/decoy/5GRJ \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/5GRJ \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/BM55-AF2/5GRJ \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[info] found 30 models in /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/BM55-AF2/decoy/5GRJ
+[stage] extracting interfaces -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/5GRJ/interface_ca (jobs=8)
+[debug] interface files found: 30
+[info] 30 models with interfaces.
+[stage] computing topology features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/5GRJ/node_topo (jobs=8)
+[stage] computing node features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/5GRJ/node_fea (jobs=8)
+[stage] constructing graphs -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/5GRJ/graph (jobs=8, cutoff=0-10 Å)
+[stage] graphs available for dataset: 30
+[stage] loading checkpoint: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/model/topoqa.ckpt
+[stage] running inference on 30 graphs (batch_size=4)
+[debug] infer(): batches=8, device=cpu, first_batch_nodes=487, has_batch=True
+[debug] first_batch edge_index shape: (2, 2090)
+[done] wrote 30 predictions to /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/BM55-AF2/5GRJ/result.csv
+Elapsed: 37 s
+
+Inference Target: 5HGG
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/BM55-AF2/decoy/5HGG \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/5HGG \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/BM55-AF2/5HGG \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[info] found 29 models in /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/BM55-AF2/decoy/5HGG
+[stage] extracting interfaces -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/5HGG/interface_ca (jobs=8)
+[debug] interface files found: 29
+[info] 29 models with interfaces.
+[stage] computing topology features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/5HGG/node_topo (jobs=8)
+[stage] computing node features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/5HGG/node_fea (jobs=8)
+[stage] constructing graphs -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/5HGG/graph (jobs=8, cutoff=0-10 Å)
+[stage] graphs available for dataset: 29
+[stage] loading checkpoint: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/model/topoqa.ckpt
+[stage] running inference on 29 graphs (batch_size=4)
+[debug] infer(): batches=8, device=cpu, first_batch_nodes=310, has_batch=True
+[debug] first_batch edge_index shape: (2, 1300)
+[done] wrote 29 predictions to /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/BM55-AF2/5HGG/result.csv
+Elapsed: 32 s
+
+Inference Target: 5KOV
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/BM55-AF2/decoy/5KOV \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/5KOV \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/BM55-AF2/5KOV \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[info] found 30 models in /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/BM55-AF2/decoy/5KOV
+[stage] extracting interfaces -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/5KOV/interface_ca (jobs=8)
+[debug] interface files found: 30
+[info] 30 models with interfaces.
+[stage] computing topology features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/5KOV/node_topo (jobs=8)
+[stage] computing node features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/5KOV/node_fea (jobs=8)
+[stage] constructing graphs -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/5KOV/graph (jobs=8, cutoff=0-10 Å)
+[stage] graphs available for dataset: 30
+[stage] loading checkpoint: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/model/topoqa.ckpt
+[stage] running inference on 30 graphs (batch_size=4)
+[debug] infer(): batches=8, device=cpu, first_batch_nodes=1012, has_batch=True
+[debug] first_batch edge_index shape: (2, 6746)
+[done] wrote 30 predictions to /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/BM55-AF2/5KOV/result.csv
+Elapsed: 61 s
+
+Inference Target: 5WK3
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/BM55-AF2/decoy/5WK3 \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/5WK3 \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/BM55-AF2/5WK3 \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[info] found 30 models in /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/BM55-AF2/decoy/5WK3
+[stage] extracting interfaces -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/5WK3/interface_ca (jobs=8)
+[debug] interface files found: 30
+[info] 30 models with interfaces.
+[stage] computing topology features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/5WK3/node_topo (jobs=8)
+[stage] computing node features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/5WK3/node_fea (jobs=8)
+[stage] constructing graphs -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/5WK3/graph (jobs=8, cutoff=0-10 Å)
+[stage] graphs available for dataset: 30
+[stage] loading checkpoint: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/model/topoqa.ckpt
+[stage] running inference on 30 graphs (batch_size=4)
+[debug] infer(): batches=8, device=cpu, first_batch_nodes=708, has_batch=True
+[debug] first_batch edge_index shape: (2, 2900)
+[done] wrote 30 predictions to /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/BM55-AF2/5WK3/result.csv
+Elapsed: 42 s
+
+Inference Target: 5Y9J
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/BM55-AF2/decoy/5Y9J \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/5Y9J \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/BM55-AF2/5Y9J \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[info] found 30 models in /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/BM55-AF2/decoy/5Y9J
+[stage] extracting interfaces -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/5Y9J/interface_ca (jobs=8)
+[debug] interface files found: 30
+[info] 30 models with interfaces.
+[stage] computing topology features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/5Y9J/node_topo (jobs=8)
+[stage] computing node features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/5Y9J/node_fea (jobs=8)
+[stage] constructing graphs -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/5Y9J/graph (jobs=8, cutoff=0-10 Å)
+[stage] graphs available for dataset: 30
+[stage] loading checkpoint: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/model/topoqa.ckpt
+[stage] running inference on 30 graphs (batch_size=4)
+[debug] infer(): batches=8, device=cpu, first_batch_nodes=1704, has_batch=True
+[debug] first_batch edge_index shape: (2, 14384)
+[done] wrote 30 predictions to /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/BM55-AF2/5Y9J/result.csv
+Elapsed: 90 s
+
+Inference Target: 6A0Z
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/BM55-AF2/decoy/6A0Z \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/6A0Z \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/BM55-AF2/6A0Z \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[info] found 30 models in /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/BM55-AF2/decoy/6A0Z
+[stage] extracting interfaces -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/6A0Z/interface_ca (jobs=8)
+[debug] interface files found: 30
+[info] 30 models with interfaces.
+[stage] computing topology features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/6A0Z/node_topo (jobs=8)
+[stage] computing node features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/6A0Z/node_fea (jobs=8)
+[stage] constructing graphs -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/6A0Z/graph (jobs=8, cutoff=0-10 Å)
+[stage] graphs available for dataset: 30
+[stage] loading checkpoint: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/model/topoqa.ckpt
+[stage] running inference on 30 graphs (batch_size=4)
+[debug] infer(): batches=8, device=cpu, first_batch_nodes=829, has_batch=True
+[debug] first_batch edge_index shape: (2, 3634)
+[done] wrote 30 predictions to /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/BM55-AF2/6A0Z/result.csv
+Elapsed: 52 s
+
+Inference Target: 6A77
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/BM55-AF2/decoy/6A77 \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/6A77 \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/BM55-AF2/6A77 \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[info] found 30 models in /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/BM55-AF2/decoy/6A77
+[stage] extracting interfaces -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/6A77/interface_ca (jobs=8)
+[debug] interface files found: 30
+[info] 30 models with interfaces.
+[stage] computing topology features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/6A77/node_topo (jobs=8)
+[stage] computing node features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/6A77/node_fea (jobs=8)
+[stage] constructing graphs -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/6A77/graph (jobs=8, cutoff=0-10 Å)
+[stage] graphs available for dataset: 30
+[stage] loading checkpoint: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/model/topoqa.ckpt
+[stage] running inference on 30 graphs (batch_size=4)
+[debug] infer(): batches=8, device=cpu, first_batch_nodes=689, has_batch=True
+[debug] first_batch edge_index shape: (2, 2940)
+[done] wrote 30 predictions to /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/BM55-AF2/6A77/result.csv
+Elapsed: 42 s
+
+Inference Target: 6AL0
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/BM55-AF2/decoy/6AL0 \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/6AL0 \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/BM55-AF2/6AL0 \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[info] found 30 models in /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/BM55-AF2/decoy/6AL0
+[stage] extracting interfaces -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/6AL0/interface_ca (jobs=8)
+[debug] interface files found: 30
+[info] 30 models with interfaces.
+[stage] computing topology features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/6AL0/node_topo (jobs=8)
+[stage] computing node features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/6AL0/node_fea (jobs=8)
+[stage] constructing graphs -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/6AL0/graph (jobs=8, cutoff=0-10 Å)
+[stage] graphs available for dataset: 30
+[stage] loading checkpoint: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/model/topoqa.ckpt
+[stage] running inference on 30 graphs (batch_size=4)
+[debug] infer(): batches=8, device=cpu, first_batch_nodes=626, has_batch=True
+[debug] first_batch edge_index shape: (2, 2946)
+[done] wrote 30 predictions to /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/BM55-AF2/6AL0/result.csv
+Elapsed: 43 s
+
+Inference Target: 6B0S
+python k_mac_inference_model_refactored.py \
+    --complex-folder \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/BM55-AF2/decoy/6B0S \
+    --work-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/6B0S \
+    --results-dir \
+    /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/BM55-AF2/6B0S \
+    --checkpoint \
+    model/topoqa.ckpt \
+    --jobs 8 \
+    --num-workers 2 \
+    --batch-size 4 \
+    --device cpu \
+    --cutoff 10 \
+    --overwrite
+[info] device = cpu
+[info] found 30 models in /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/BM55-AF2/decoy/6B0S
+[stage] extracting interfaces -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/6B0S/interface_ca (jobs=8)
+[debug] interface files found: 30
+[info] 30 models with interfaces.
+[stage] computing topology features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/6B0S/node_topo (jobs=8)
+[stage] computing node features -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/6B0S/node_fea (jobs=8)
+[stage] constructing graphs -> /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_work/BM55-AF2/6B0S/graph (jobs=8, cutoff=0-10 Å)
+[stage] graphs available for dataset: 30
+[stage] loading checkpoint: /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/model/topoqa.ckpt
+[stage] running inference on 30 graphs (batch_size=4)
+[debug] infer(): batches=8, device=cpu, first_batch_nodes=685, has_batch=True
+[debug] first_batch edge_index shape: (2, 2894)
+[done] wrote 30 predictions to /Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/BM55-AF2/6B0S/result.csv
+Elapsed: 41 s
