@@ -138,4 +138,54 @@ do
    printf "${m_hat_row}\n" >> ${target_path}/${target_name}.ranking_loss_result.csv
    # End 
 
+   # calculate per target hit rate
+   # a / b / c
+   # take top 10 DockQ predicted sorted by predicted score
+   # count a = count Acceptable = 0.23 <= DockQ score < 0.49
+   #       b = count Medium     = 0.49 <= DockQ score < 0.80
+   #       c = count High       = 0.80 <= DockQ 
+   
+   abc_count=$(LC_ALL=C sort -t, -k3,3nr ${target_path}/${target_name}.unified_result.csv | 
+               head -10 |
+               cut -d "," -f 4 |
+               LC_ALL=C awk '
+                          NF {
+                               x = $1 + 0
+                               if (x >= 0.23) A++
+                               if (x >= 0.49) B++
+                               if (x >= 0.8) C++
+                             }
+                          END {
+                          printf "A [True DockQ >= 0.23]: %d\nB [True DockQ >= 0.49]: %d\nC [True DockQ >= 0.8]: %d\n", A, B, C
+                         }
+                         ' |
+               cut -d ":" -f 2 |
+               xargs |
+               sed "s/ /\//g"
+             )
+
+   printf "${target_name} hit rate = ${abc_count}\n\n"
+
+   # write hit rate audit file - to debug if required
+   # Begin 
+   printf "Acceptable-or-better (a): count DockQ ≥ 0.23\n" \
+   > ${target_path}/${target_name}.hit_rate_result.csv
+
+   printf "Medium-or-better (b): count DockQ ≥ 0.49\n" \
+   >> ${target_path}/${target_name}.hit_rate_result.csv
+
+   printf "High (c): count DockQ ≥ 0.80\n\n" \
+   >> ${target_path}/${target_name}.hit_rate_result.csv
+
+   printf "hit rate = a/b/c \n" \
+   >> ${target_path}/${target_name}.hit_rate_result.csv
+
+   printf "\n${target_name} hit rate =  ${abc_count}\n\n" \
+   >> ${target_path}/${target_name}.hit_rate_result.csv
+
+   LC_ALL=C sort -t, -k3,3nr ${target_path}/${target_name}.unified_result.csv | 
+   head -10 >> ${target_path}/${target_name}.hit_rate_result.csv
+
+   # End
+
 done
