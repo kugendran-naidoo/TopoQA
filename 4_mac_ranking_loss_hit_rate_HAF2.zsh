@@ -5,9 +5,9 @@
 #     in the structure:
 #     target, model, pred_dockq, true_dockq
 
-export DATASET_NAME="ABAG-AF3"
-export GROUND_TRUTH_FILE="/Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/ABAG-AF3/label.txt"
-export TOPO_RESULTS_DIR="/Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/ABAG-AF3"
+export DATASET_NAME="HAF2"
+export GROUND_TRUTH_FILE="/Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/datasets/HAF2/label_info.csv"
+export TOPO_RESULTS_DIR="/Volumes/PData/Data/Dev/Github/Repos/phd3/topoqa/TopoQA/topoqa_results/HAF2"
 export TOPO_RESULT_FILE="result.csv"
 
 # search topo_results directory for target results
@@ -47,36 +47,7 @@ if (!(k in a)) a[k] = $3
 }
 
 
-# address issue with ABAG-AF3 ground truth file
-# function to add TARGET_NAME to front of every row
-transform_ground_truth() {
-
-   typeset -u target_name
-
-   grep -v ^MODEL ${GROUND_TRUTH_FILE} |
-   sort |
-   while read -r g_truth_line
-   do
-
-      model_name=$(printf "${g_truth_line}\n" |
-                   cut -d " " -f 1
-                  )
-
-      tmp=${model_name#*_}
-      target_name=${tmp%%_*}
-
-      printf "${target_name} ${g_truth_line}\n"
-
-   done
-
-}
-
-
 # Main
-
-# ABAG-AF3 does not have target on each line - add it
-# use this variable later on in main loop
-trans_ground_truth=$(transform_ground_truth)
 
 # list all available prediction result files - TOPO_RESULT_FILE
 search_topo_results |
@@ -97,7 +68,7 @@ do
 
    # modify target result file to prepare for joining
    # to ground truth
-   # ABAG-AF3 decoy don't have extra "_tidy" to remove like BM55-AF2
+   # HAF2 decoy don't have extra "_tidy" to remove like BM55-AF2
    # removed extra sed found in BM55 script version
    temp_result=$(sort ${target_result_file} |
                 # remove header
@@ -105,16 +76,9 @@ do
                 sed "s/^/${target_name}\,/"
                )
 
-   # ABAG-AF3 does not have target on each line - add it
-   # needed for join operation later on
-   # use trans_ground_truth calculated above
-
    # extract target ground truth
-   # ABAG-AF3 is space delimited - convert to comma
-   temp_g_truth=$(printf "${trans_ground_truth}\n" |
-                  grep ^${target_name} |
-                  sort |
-                  sed "s/ /\,/g"
+   temp_g_truth=$(grep ^${target_name} ${GROUND_TRUTH_FILE} |
+                  sort
                  )
 
    printf "\nTarget: ${target_name}\n"
@@ -174,5 +138,55 @@ do
               )
    printf "${m_hat_row}\n" >> ${target_path}/${target_name}.ranking_loss_result.csv
    # End 
+
+   # calculate per target hit rate
+   # a / b / c
+   # take top 10 DockQ predicted sorted by predicted score
+   # count a = count Acceptable = 0.23 <= DockQ score < 0.49
+   #       b = count Medium     = 0.49 <= DockQ score < 0.80
+   #       c = count High       = 0.80 <= DockQ 
+   
+   abc_count=$(LC_ALL=C sort -t, -k3,3nr ${target_path}/${target_name}.unified_result.csv | 
+               head -10 |
+               cut -d "," -f 4 |
+               LC_ALL=C awk '
+                          NF {
+                               x = $1 + 0
+                               if (x >= 0.23) A++
+                               if (x >= 0.49) B++
+                               if (x >= 0.8) C++
+                             }
+                          END {
+                          printf "A [True DockQ >= 0.23]: %d\nB [True DockQ >= 0.49]: %d\nC [True DockQ >= 0.8]: %d\n", A, B, C
+                         }
+                         ' |
+               cut -d ":" -f 2 |
+               xargs |
+               sed "s/ /\//g"
+             )
+
+   printf "${target_name} hit rate = ${abc_count}\n\n"
+
+   # write hit rate audit file - to debug if required
+   # Begin 
+   printf "Acceptable-or-better (a): count DockQ ≥ 0.23\n" \
+   > ${target_path}/${target_name}.hit_rate_result.csv
+
+   printf "Medium-or-better (b): count DockQ ≥ 0.49\n" \
+   >> ${target_path}/${target_name}.hit_rate_result.csv
+
+   printf "High (c): count DockQ ≥ 0.80\n\n" \
+   >> ${target_path}/${target_name}.hit_rate_result.csv
+
+   printf "hit rate = a/b/c \n" \
+   >> ${target_path}/${target_name}.hit_rate_result.csv
+
+   printf "\n${target_name} hit rate =  ${abc_count}\n\n" \
+   >> ${target_path}/${target_name}.hit_rate_result.csv
+
+   LC_ALL=C sort -t, -k3,3nr ${target_path}/${target_name}.unified_result.csv | 
+   head -10 >> ${target_path}/${target_name}.hit_rate_result.csv
+
+   # End
 
 done
