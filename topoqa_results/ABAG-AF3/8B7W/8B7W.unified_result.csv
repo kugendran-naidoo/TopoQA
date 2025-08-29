@@ -1,0 +1,26 @@
+TARGET, MODEL, PRED_DOCKQ, TRUE_DOCKQ
+8B7W,fold_8b7w_1_model_0,0.73196113,0.084
+8B7W,fold_8b7w_1_model_1,0.22107789,0.059
+8B7W,fold_8b7w_1_model_2,0.045483235,0.048
+8B7W,fold_8b7w_1_model_3,0.00013735372,0.018
+8B7W,fold_8b7w_1_model_4,0.020386301,0.014
+8B7W,fold_8b7w_2_model_0,0.035460785,0.019
+8B7W,fold_8b7w_2_model_1,0.007958538,0.059
+8B7W,fold_8b7w_2_model_2,0.037549525,0.057
+8B7W,fold_8b7w_2_model_3,0.0430809,0.035
+8B7W,fold_8b7w_2_model_4,0.08160888,0.034
+8B7W,fold_8b7w_3_model_0,0.34363395,0.208
+8B7W,fold_8b7w_3_model_1,0.73345107,0.022
+8B7W,fold_8b7w_3_model_2,0.6164199,0.14
+8B7W,fold_8b7w_3_model_3,0.010441656,0.012
+8B7W,fold_8b7w_3_model_4,0.85362595,0.242
+8B7W,fold_8b7w_4_model_0,0.6031045,0.055
+8B7W,fold_8b7w_4_model_1,0.32356748,0.055
+8B7W,fold_8b7w_4_model_2,0.65226936,0.057
+8B7W,fold_8b7w_4_model_3,0.022912806,0.019
+8B7W,fold_8b7w_4_model_4,0.07972079,0.036
+8B7W,fold_8b7w_5_model_0,0.172577,0.015
+8B7W,fold_8b7w_5_model_1,0.5475978,0.015
+8B7W,fold_8b7w_5_model_2,0.111905746,0.034
+8B7W,fold_8b7w_5_model_3,0.14513679,0.043
+8B7W,fold_8b7w_5_model_4,0.2910424,0.018
